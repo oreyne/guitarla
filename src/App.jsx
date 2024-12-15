@@ -37,7 +37,7 @@ function App() {
             if (item.id === id && item.quantity < 5) {
                 return {
                     ...item,
-                    quantity: item.quantity++
+                    quantity: item.quantity + 1
                 } 
             }
             return item
@@ -50,7 +50,7 @@ function App() {
             if (item.id === id && item.quantity >= 1) {
                 return {
                     ...item,
-                    quantity: item.quantity--
+                    quantity: item.quantity - 1
                 } 
             }
             return item
