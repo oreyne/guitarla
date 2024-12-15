@@ -8,7 +8,7 @@ function App() {
         const storageCart = localStorage.getItem('cart')
         return storageCart ? JSON.parse(storageCart) : []
     }
-    const [data, setData] = useState(db)
+    const [data] = useState(db)
     const [cart, setCart] = useState(initialCart)
 
     useEffect(() => {
@@ -33,12 +33,16 @@ function App() {
     }
 
     function increaseItem(id) {
-        const itemExits = cart.findIndex(guitar => guitar.id === id)
-        if (itemExits >= 0 && updateCart[itemExits].quantity < 5) {
-            const updateCart = [...cart]
-            updateCart[itemExits].quantity++
-            setCart(updateCart)
-        }
+        const updateCart = cart.map(item => {
+            if (item.id === id && item.quantity < 5) {
+                return {
+                    ...item,
+                    quantity: item.quantity++
+                } 
+            }
+            return item
+        })
+        setCart(updateCart)
     }
 
     function decreaseItem(id) {
