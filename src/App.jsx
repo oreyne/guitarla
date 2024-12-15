@@ -19,6 +19,18 @@ function App() {
         }        
     }
 
+    function removeFromCart() {
+        
+    }
+
+    function increaseItem() {
+        
+    }
+
+    function decreaseItem() {
+        
+    }
+
   return (
     <>
         <Header 
@@ -32,6 +44,9 @@ function App() {
                         key={item.id}
                         item={item}
                         addToCart={addToCart}
+                        removeFromCart={removeFromCart}
+                        increaseItem={increaseItem}
+                        decreaseItem={decreaseItem}
                         />
                 ))}
             </div>
