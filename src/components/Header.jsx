@@ -48,6 +48,7 @@ export default function Header({cart, removeFromCart, increaseItem, decreaseItem
                                                                 <button
                                                                     type="button"
                                                                     className="btn btn-dark"
+                                                                    onClick={() => decreaseItem(guitar.id)}
                                                                 >
                                                                     -
                                                                 </button>
@@ -55,6 +56,7 @@ export default function Header({cart, removeFromCart, increaseItem, decreaseItem
                                                                 <button
                                                                     type="button"
                                                                     className="btn btn-dark"
+                                                                    onClick={() => increaseItem(guitar.id)}
                                                                 >
                                                                     +
                                                                 </button>
@@ -63,6 +65,7 @@ export default function Header({cart, removeFromCart, increaseItem, decreaseItem
                                                                 <button
                                                                     className="btn btn-danger"
                                                                     type="button"
+                                                                    onClick={() => removeFromCart(guitar.id)}
                                                                 >
                                                                     X
                                                                 </button>
